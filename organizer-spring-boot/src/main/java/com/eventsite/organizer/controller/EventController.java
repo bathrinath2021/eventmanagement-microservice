@@ -1,4 +1,4 @@
-package com.bathri.organizer.controller;
+package com.eventsite.organizer.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bathri.organizer.model.Event;
-import com.bathri.organizer.repository.EventRepository;
+import com.eventsite.organizer.model.Event;
+import com.eventsite.organizer.repository.EventRepository;
 
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController

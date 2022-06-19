@@ -1,4 +1,4 @@
-package com.bathri.organizer;
+package com.eventsite.organizer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

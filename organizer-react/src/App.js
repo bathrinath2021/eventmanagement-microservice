@@ -18,7 +18,7 @@ class App extends Component {
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
               <Link to={"/events"} className="nav-link">
-                Events
+                Home
               </Link>
             </li>
             <li className="nav-item">
