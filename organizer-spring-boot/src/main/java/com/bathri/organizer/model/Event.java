@@ -1,4 +1,4 @@
-package com.eventsite.organizer.model;
+package com.bathri.organizer.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

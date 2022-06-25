@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import EventDataService from "../services/event.service";
+import { TextData } from "./Textfield";
+import {Formik , Form} from "formik"
 
 export default class AddEvent extends Component {
   constructor(props) {
@@ -148,143 +150,96 @@ export default class AddEvent extends Component {
           <div>
             <h4>You submitted successfully!</h4>
             <button className="btn btn-success" onClick={this.newEvent}>
-              Add
+              Create
             </button>
           </div>
         ) : (
           <div>
-            <div className="form-group">
-              <label htmlFor="title">Event Name</label>
-              <input
-                type="text"
-                className="form-control"
-                id="title"
-                required
-                value={this.state.title}
-                onChange={this.onChangeTitle}
-                name="title"
-              />
-            </div>
-
-            {/*  */}
-
-            <div className="form-group">
-              <label htmlFor="venueName">Venue Name</label>
-              <input
-                type="text"
-                className="form-control"
-                id="venueName"
-                required
-                value={this.state.venueName}
-                onChange={this.onChangeVenueName}
-                name="venueName"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="venueAddress">Venue Address</label>
-              <input
-                type="text"
-                className="form-control"
-                id="venueName"
-                required
-                value={this.state.venueAddress}
-                onChange={this.onChangeVenueAddress}
-                name="venueAddress"
-              />
-            </div>
-            <hr />
-            <div className="form-group">
-              <label htmlFor="dateOfEvent">Date Of Event</label>
-              <input
-                type="text"
-                className="form-control"
-                id="dateOfEvent"
-                required
-                value={this.state.dateOfEvent}
-                onChange={this.onChangeDateOfEvent}
-                name="dateOfEvent"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="startTime">Start Time</label>
-              <input
-                type="text"
-                className="form-control"
-                id="startTime"
-                required
-                value={this.state.startTime}
-                onChange={this.onChangeStartTime}
-                name="startTime"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="endTime">End Time</label>
-              <input
-                type="text"
-                className="form-control"
-                id="endTime"
-                required
-                value={this.state.endTime}
-                onChange={this.onChangeEndTime}
-                name="endTime"
-              />
-            </div>
-
-            <hr></hr>
-
-            {/*  */}
-
-            <div className="form-group">
-              <label htmlFor="description">About The Event</label>
-              <input
-                type="text"
-                className="form-control"
-                id="description"
-                required
-                value={this.state.description}
-                onChange={this.onChangeDescription}
-                name="description"
-              />
-            </div>
-
-            <hr />
-
-            <div className="form-group">
-              <label htmlFor="availability">availability</label>
-              <input
-                type="text"
-                className="form-control"
-                id="availability"
-                required
-                value={this.state.availability}
-                onChange={this.onChangeAvailability}
-                name="availability"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="price">Price</label>
-              <input
-                type="text"
-                className="form-control"
-                id="price"
-                required
-                value={this.state.price}
-                onChange={this.onChangePrice}
-                name="price"
-              />
-            </div>
-
-
-
-            <button onClick={this.saveEvent} className="btn btn-success">
-              Submit
-            </button>
+              <Formik initialValues={this.state} onSubmit={this.saveEvent}>
+                <div>
+                  <Form >
+                    <TextData control='input' type="text" className="form-control" label="Event Name"
+                      id="title"
+                      required
+                      value={this.state.title}
+                      onChange={this.onChangeTitle}
+                      name="title" />
+                    <TextData control='input' type="text"
+                      className="form-control"
+                      id="venueName"
+                      required
+                      value={this.state.venueName}
+                      onChange={this.onChangeVenueName}
+                      name="venueName"
+                      label="Venue Name" />
+                    <TextData control='input' type="text"
+                      className="form-control"
+                      id="venueName"
+                      required
+                      label= 'Venue Address'
+                      value={this.state.venueAddress}
+                      onChange={this.onChangeVenueAddress}
+                      name="venueAddress" />
+                      <hr/>
+                    <TextData control='input' type="text"
+                      className="form-control"
+                      id="dateOfEvent"
+                      required
+                      label='Date of event'
+                      value={this.state.dateOfEvent}
+                      onChange={this.onChangeDateOfEvent}
+                      name="dateOfEvent" />
+                    <TextData control='input' type="text"
+                      className="form-control"
+                      id="startTime"
+                      required
+                      label='Start Time'
+                      value={this.state.startTime}
+                      onChange={this.onChangeStartTime}
+                      name="startTime" />
+                    <TextData control='input' type="text"
+                      className="form-control"
+                      id="endTime"
+                      required
+                      label='End Time'
+                      value={this.state.endTime}
+                      onChange={this.onChangeEndTime}
+                      name="endTime" />
+                      <hr/>
+                    <TextData control='input' type="text"
+                      className="form-control"
+                      id="description"
+                      required
+                      label='About The Event'
+                      value={this.state.description}
+                      onChange={this.onChangeDescription}
+                      name="description" />
+                      <hr/>
+                    <TextData control='input' type="text"
+                      className="form-control"
+                      id="availability"
+                      required
+                      label='Availability'
+                      value={this.state.availability}
+                      onChange={this.onChangeAvailability}
+                      name="availability" />
+                    <TextData control='input' type="text"
+                      className="form-control"
+                      id="price"
+                      required
+                      label='Price'
+                      value={this.state.price}
+                      onChange={this.onChangePrice}
+                      name="price" />
+                      <hr/>
+                    <button type='submit' className="btn btn-success">Submit</button>
+                  </Form>
+                </div>
+              </Formik>
           </div>
         )}
       </div>
+      
     );
   }
 }
